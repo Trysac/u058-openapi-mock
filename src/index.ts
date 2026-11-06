@@ -1,20 +1,23 @@
 /**
  * Public entry point of @trysac/openapi-mock.
  *
- * Replace this placeholder with the utility's real API. Keep every export documented and covered by tests.
+ * Mock HTTP handler from an OpenAPI 3.x document with examples, deterministic
+ * schema bodies, RFC 7240 Prefer control and seeded errors.
  */
 
-/**
- * Builds a greeting for `name`.
- *
- * @param name - Who to greet. Surrounding whitespace is ignored.
- * @returns The greeting, for example `"Hello, Ada!"`.
- * @throws {TypeError} When `name` is empty after trimming.
- */
-export function greet(name: string): string {
-  const trimmed = name.trim();
-  if (trimmed === "") {
-    throw new TypeError("name must not be empty");
-  }
-  return `Hello, ${trimmed}!`;
-}
+export type { MockErrorCode } from "./errors.js";
+export { MockError } from "./errors.js";
+export { generateFromSchema } from "./generate.js";
+export { createMockHandler } from "./handler.js";
+export { createRng } from "./rng.js";
+export type { RunningServer, StartServerOptions } from "./server.js";
+export { startServer } from "./server.js";
+export { loadSpec } from "./spec.js";
+export type {
+  MockEvent,
+  MockHandler,
+  MockOptions,
+  MockRequest,
+  MockResponse,
+  OpenApiDocument,
+} from "./types.js";

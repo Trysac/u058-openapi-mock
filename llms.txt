@@ -1,13 +1,14 @@
 # @trysac/openapi-mock
 
-> Mock HTTP handler from an OpenAPI 3.x document with examples, deterministic schema bodies, RFC 7240 Prefer control and seeded errors TypeScript library for Node.js 20+, published as ES modules with type declarations. MIT.
+> Pure mock HTTP handler generated from an OpenAPI 3.0.x or 3.1.x document, with example and schema-derived bodies, RFC 7240 Prefer control (code and example), seeded 500 injection, RFC 9457 problem responses and an optional loopback node:http server. TypeScript library for Node.js 20+, published as ES modules with type declarations. MIT.
 
 ## Docs
 
-- [README](README.md): problem, installation and usage example
+- [README](README.md): problem, installation, usage, API and limits
 - [AGENTS.md](AGENTS.md): commands, folder map, conventions and limits for contributors and agents
 - [Architecture](docs/ARCHITECTURE.md): modules and boundaries
-- [Testing](docs/TESTING.md): how tests and coverage work
+- [Security](docs/SECURITY.md): threat model and practices
+- [Testing](docs/TESTING.md): test files and coverage
 - [Decisions](docs/decisions/0001-record-architecture-decisions.md): architecture decision records
 
 ## Optional
