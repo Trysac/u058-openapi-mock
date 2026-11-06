@@ -1,12 +1,25 @@
 import { describe, expect, it } from "vitest";
-import { greet } from "../src/index.js";
+import {
+  createMockHandler,
+  createRng,
+  generateFromSchema,
+  loadSpec,
+  MockError,
+  startServer,
+} from "../src/index.js";
 
-describe("greet", () => {
-  it("greets a trimmed name", () => {
-    expect(greet("  Ada ")).toBe("Hello, Ada!");
+describe("public API", () => {
+  it("exports the five functions", () => {
+    for (const fn of [loadSpec, createMockHandler, generateFromSchema, createRng, startServer]) {
+      expect(typeof fn).toBe("function");
+    }
   });
 
-  it("rejects an empty name", () => {
-    expect(() => greet("   ")).toThrow(TypeError);
+  it("MockError carries a stable code and a short message", () => {
+    const error = new MockError("parse_error", "x".repeat(500));
+    expect(error).toBeInstanceOf(Error);
+    expect(error.name).toBe("MockError");
+    expect(error.code).toBe("parse_error");
+    expect(error.message.length).toBeLessThanOrEqual(200);
   });
 });
