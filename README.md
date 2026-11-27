@@ -1,7 +1,6 @@
 # openapi-mock
 
-[![npm version](https://img.shields.io/npm/v/@trysac/openapi-mock.svg)](https://www.npmjs.com/package/@trysac/openapi-mock)
-[![license: MIT](https://img.shields.io/npm/l/@trysac/openapi-mock.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![CI](https://github.com/Trysac/u058-openapi-mock/actions/workflows/ci.yml/badge.svg)](https://github.com/Trysac/u058-openapi-mock/actions/workflows/ci.yml)
 
 Mock HTTP handler from an OpenAPI 3.x document with examples, deterministic schema bodies, RFC 7240 Prefer control and seeded errors.
@@ -12,9 +11,15 @@ Frontend and integration work stalls while the real API is not ready, and hand-w
 
 ## Install
 
+Not published to npm yet. Build it from a clone, then install it from the local path:
+
 ```sh
-npm install @trysac/openapi-mock
+git clone https://github.com/Trysac/u058-openapi-mock.git
+cd u058-openapi-mock && npm ci && npm run build
+cd ../your-project && npm install ../u058-openapi-mock
 ```
+
+Imports keep the package name: `import { ... } from "@trysac/openapi-mock"`.
 
 Requires Node.js 20 or newer. The package ships ES modules with TypeScript declarations. Its only runtime dependency is `yaml`, used to read YAML documents.
 
